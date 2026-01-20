@@ -9,8 +9,17 @@ body.light-mode {
     color: #212529;
 }
 
-.toggle-btn {
+.toggle-btn-left {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.toggle-btn-right {
     position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 1000;
+    /*padding: 8px 30px;*/
 }

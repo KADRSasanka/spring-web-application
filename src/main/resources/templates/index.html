@@ -9,11 +9,23 @@
 </head>
 
 <body>
-    <button class="btn btn-light toggle-btn" id="themeToggle">🌙 Dark Mode</button>
+    <div class="d-flex justify-content-between align-items-center px-3 mt-3">
+        <!-- Left toggle button -->
+        <button class="btn btn-light toggle-btn-left" id="leftThemeToggle">
+            ADMIN
+        </button>
+
+        <!-- Right toggle button -->
+        <button class="btn btn-light toggle-btn-right" id="themeToggle">
+            🌙 Dark Mode
+        </button>
+    </div>
 
     <div class="container">
-        <h1 class="text-center my-4">WELCOME TO OUR WEB PAGE</h1>
-        <a class="btn btn-outline-primary" href="#" role="button">Link</a>
+        <h1 class="text-center my-4">EVENT MANAGEMENT SYSTEM</h1>
+        <div class="col-6">
+            <a class="btn btn-outline-primary col-6 mx-auto" href="#" role="button">Link</a>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
