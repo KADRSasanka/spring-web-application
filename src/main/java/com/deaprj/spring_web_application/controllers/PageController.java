@@ -6,16 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-    // Load index page
     @GetMapping("/")
-    public String indexPage() {
-        return "index"; // loads index.html
+    public String root() {
+        return "redirect:/index";
     }
 
-    // Load admin dashboard
-    @GetMapping("/admin")
-    public String adminPage() {
-        return "admin"; // loads admin.html
+    @GetMapping("/index")
+    public String index() {
+        return "index";
     }
 
+//    @GetMapping("/admin")
+//    public String admin() {
+//        return "admin";
+//    }
 }

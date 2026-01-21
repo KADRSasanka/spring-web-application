@@ -1,5 +1,6 @@
 const toggleBtn = document.getElementById('themeToggle');
-const lefttoggleBtn = document.getElementById('leftThemeToggle');
+const lefttoggleBtn1 = document.getElementById('leftThemeToggle1');
+const lefttoggleBtn2 = document.getElementById('leftThemeToggle2');
 const body = document.body;
 
 toggleBtn.addEventListener('click', () => {
@@ -16,13 +17,23 @@ toggleBtn.addEventListener('click', () => {
     }
 
     if (body.classList.contains('light-mode')) {
-        lefttoggleBtn.textContent = "ADMIN";
-        lefttoggleBtn.classList.remove("btn-light");
-        lefttoggleBtn.classList.add("btn-dark");
+        lefttoggleBtn1.textContent = "ADMIN";
+        lefttoggleBtn1.classList.remove("btn-light");
+        lefttoggleBtn1.classList.add("btn-dark");
     } else {
-        lefttoggleBtn.textContent = "ADMIN";
-        lefttoggleBtn.classList.remove("btn-dark");
-        lefttoggleBtn.classList.add("btn-light");
+        lefttoggleBtn1.textContent = "ADMIN";
+        lefttoggleBtn1.classList.remove("btn-dark");
+        lefttoggleBtn1.classList.add("btn-light");
+    }
+
+    if (body.classList.contains('light-mode')) {
+        lefttoggleBtn2.textContent = "ADMIN";
+        lefttoggleBtn2.classList.remove("btn-light");
+        lefttoggleBtn2.classList.add("btn-dark");
+    } else {
+        lefttoggleBtn2.textContent = "ADMIN";
+        lefttoggleBtn2.classList.remove("btn-dark");
+        lefttoggleBtn2.classList.add("btn-light");
     }
 });
 

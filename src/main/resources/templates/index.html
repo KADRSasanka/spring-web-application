@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,17 +11,29 @@
 <body>
     <div class="d-flex justify-content-between align-items-center px-3 mt-3">
         <!-- Left toggle button -->
-        <a th:href="@{/admin}">
-            <button class="btn btn-light toggle-btn-left" id="leftThemeToggle">
-                ADMIN
-            </button>
-        </a><!--
-        <div th:if="${param.unauthorized}"
-             class="alert alert-danger alert-dismissible fade show"
-             role="alert">
-            <strong>You are not Authorized!</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>-->
+        <!-- ADMIN: enabled -->
+        <a th:href="@{/admin}"
+           class="btn btn-light toggle-btn-left"
+           id="leftThemeToggle1"
+           sec:authorize="hasRole('ADMIN')">
+            ADMIN
+        </a>
+
+        <!-- USER: disabled -->
+        <button class="btn btn-light toggle-btn-left"
+                id="leftThemeToggle2"
+                disabled
+                title="Only admins can access this page"
+                sec:authorize="hasRole('USER')">
+            ADMIN
+        </button>
+        <!--
+                <div th:if="${param.unauthorized}"
+                     class="alert alert-danger alert-dismissible fade show"
+                     role="alert">
+                    <strong>You are not Authorized!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>-->
 
         <!-- Right toggle button -->
         <button class="btn btn-light toggle-btn-right" id="themeToggle">
