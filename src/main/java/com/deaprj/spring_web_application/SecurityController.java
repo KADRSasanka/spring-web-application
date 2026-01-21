@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class SecurityController {
 
-    @GetMapping("/")
-    public String greet(HttpServletRequest request) {
-        return "index"; // loads index.html
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
     }
-
 }
+

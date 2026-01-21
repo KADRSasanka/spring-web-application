@@ -11,9 +11,17 @@
 <body>
     <div class="d-flex justify-content-between align-items-center px-3 mt-3">
         <!-- Left toggle button -->
-        <button class="btn btn-light toggle-btn-left" id="leftThemeToggle">
-            ADMIN
-        </button>
+        <a th:href="@{/admin}">
+            <button class="btn btn-light toggle-btn-left" id="leftThemeToggle">
+                ADMIN
+            </button>
+        </a><!--
+        <div th:if="${param.unauthorized}"
+             class="alert alert-danger alert-dismissible fade show"
+             role="alert">
+            <strong>You are not Authorized!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>-->
 
         <!-- Right toggle button -->
         <button class="btn btn-light toggle-btn-right" id="themeToggle">
