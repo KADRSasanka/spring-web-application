@@ -11,10 +11,10 @@ public class PageController {
         return "redirect:/index";
     }
 
-    @GetMapping("/index")
-    public String index() {
-        return "index";
-    }
+//    @GetMapping("/index")
+//    public String index() {
+//        return "index";
+//    }
 
 //    @GetMapping("/admin")
 //    public String admin() {

@@ -1,0 +1,27 @@
+package com.deaprj.spring_web_application.repositories;
+
+import com.deaprj.spring_web_application.models.EventStatus;
+import com.deaprj.spring_web_application.models.Events;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface EventRepository extends JpaRepository<Events, Long> {
+
+//    // Find by event code (useful for unique events)
+//    Optional<Events> findByEventCode(String eventCode);
+//
+//    // Find events by status (UPCOMING, ONGOING, COMPLETED)
+//    List<Events> findByStatus(EventStatus status);
+//
+//    // Find events by venue
+//    List<Events> findByVenue(String venue);
+//
+//    // Find events by project chair (user id)
+//    List<Events> findByProjectChairId(Long projectChairId);
+//
+//    // Search by event name (partial match)
+//    List<Events> findByEventNameContainingIgnoreCase(String keyword);
+
+}

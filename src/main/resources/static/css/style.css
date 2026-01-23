@@ -24,3 +24,6 @@ body.light-mode {
     /*padding: 8px 30px;*/
 }
 
+.container-fluid {
+    --bs-gutter-x: 10rem;
+}
