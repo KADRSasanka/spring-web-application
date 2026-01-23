@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/events")
+@RequestMapping("/index")
 public class EventController {
 
     private final EventRepository eventRepository;
@@ -23,21 +23,22 @@ public class EventController {
     public String viewEvents(Model model) {
         List<Events> events = eventRepository.findAll();
         model.addAttribute("events", events);
+        model.addAttribute("event", new Events()); //Add this for the model
         return "index"; // index.html
     }
 
     // 🔹 Show Add Event form
-    @GetMapping("/add")
-    public String showAddEventForm(Model model) {
-        model.addAttribute("event", new Events());
-        return "event-add"; // event-add.html
-    }
+//    @GetMapping("/add")
+//    public String showAddEventForm(Model model) {
+//        model.addAttribute("event", new Events());
+//        return "redirect:/index";
+//    }
 
     // 🔹 Save new event
     @PostMapping("/save")
     public String saveEvent(@ModelAttribute Events event) {
         eventRepository.save(event);
-        return "redirect:/events";
+        return "redirect:/index";
     }
 
     // 🔹 Show Edit Event form
@@ -47,7 +48,10 @@ public class EventController {
                 .orElseThrow(() -> new RuntimeException("Event not found"));
 
         model.addAttribute("event", event);
-        return "event-edit"; // event-edit.html
+        model.addAttribute("events", eventRepository.findAll());
+        model.addAttribute("editMode", true);
+
+        return "index"; // index.html
     }
 
     // 🔹 Update event
@@ -63,17 +67,17 @@ public class EventController {
         event.setStartDate(updatedEvent.getStartDate());
         event.setEndDate(updatedEvent.getEndDate());
         event.setStatus(updatedEvent.getStatus());
-        event.setProjectChair(updatedEvent.getProjectChair());
+        //event.setProjectChair(updatedEvent.getProjectChair());
 
         eventRepository.save(event);
 
-        return "redirect:/events";
+        return "redirect:/index";
     }
 
     // 🔹 Delete event
     @GetMapping("/delete/{id}")
     public String deleteEvent(@PathVariable Long id) {
         eventRepository.deleteById(id);
-        return "redirect:/events";
+        return "redirect:/index";
     }
 }

@@ -1,4 +1,4 @@
-package com.deaprj.spring_web_application.controllers;
+/*package com.deaprj.spring_web_application.controllers;
 
 import com.deaprj.spring_web_application.repositories.EventRepository;
 import org.springframework.stereotype.Controller;
@@ -19,4 +19,4 @@ public class IndexController {
         model.addAttribute("events", eventRepository.findAll());
         return "index";
     }
-}
+}*/

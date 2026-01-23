@@ -1,13 +1,47 @@
+/* Default Dark Mode */
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
     background-color: #212529;
     color: #ffffff;
 }
 
+.modal-content {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+
+.btn-light {
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #ccc;
+}
+
+/* Light Mode */
 body.light-mode {
     background-color: #f8f9fa;
     color: #212529;
 }
+
+body.light-mode .modal-content {
+    background-color: #fff;
+    color: #212529;
+    border: 1px solid #ccc;
+}
+
+body.light-mode .btn-light,
+body.light-mode .btn-outline-secondary,
+body.light-mode .btn-outline-success,
+body.light-mode .btn-outline-warning {
+    color: #212529;
+}
+
+body.light-mode .btn-dark {
+    color: #fff;
+    background-color: #212529;
+    border-color: #000;
+}
+
 
 .toggle-btn-left {
     position: fixed;
@@ -26,4 +60,11 @@ body.light-mode {
 
 .container-fluid {
     --bs-gutter-x: 10rem;
+}
+.badge-font {
+    font-size: 0.65rem;
+}
+.modal-backdrop.show {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,1);
 }
