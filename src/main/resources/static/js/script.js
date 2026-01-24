@@ -36,4 +36,19 @@ toggleBtn.addEventListener('click', () => {
         lefttoggleBtn2.classList.add("btn-light");
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const editModal = document.getElementById('editEventModal');
 
+    editModal.addEventListener('show.bs.modal', event => {
+        const button = event.relatedTarget;
+
+        document.getElementById('editId').value = button.dataset.id;
+        document.getElementById('editEventCode').value = button.dataset.code;
+        document.getElementById('editEventName').value = button.dataset.name;
+        document.getElementById('editVenue').value = button.dataset.venue;
+        document.getElementById('editProjectChair').value = button.dataset.chair;
+        document.getElementById('editStatus').value = button.dataset.status;
+        document.getElementById('editStartDate').value = button.dataset.start;
+        document.getElementById('editEndDate').value = button.dataset.end;
+    });
+});

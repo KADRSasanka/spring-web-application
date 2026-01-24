@@ -99,8 +99,19 @@
                     </span>
                 </td>
                 <td>
-                    <a th:href="@{/index/edit/{id}(id=${event.id})}"
-                       class="btn btn-sm btn-warning">Edit</a>
+                    <button class="btn btn-warning btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editEventModal"
+                            th:attr="data-id=${event.id},
+                                     data-code=${event.eventCode},
+                                     data-name=${event.eventName},
+                                     data-venue=${event.venue},
+                                     data-chair=${event.projectChair},
+                                     data-status=${event.status},
+                                     data-start=${event.startDate},
+                                     data-end=${event.endDate}">
+                            Edit
+                    </button>
 
                     <a th:href="@{/events/delete/{id}(id=${event.id})}"
                        class="btn btn-sm btn-danger"
@@ -199,14 +210,15 @@
 
     <!-- Center appeared Edit Modal Form -->
     <div class="modal fade" id="editEventModal" tabindex="-1"
-         th:classappend="${editMode} ? 'show d-block' : ''">
+         <!--th:classappend="${editMode} ? 'show d-block' : ''"-->>
 
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content bg-dark text-light border-secondary">
+            <div class="modal-content border-secondary themed-modal">
 
-                <div class="modal-header border-secondary">
+            <div class="modal-header border-secondary">
                     <h5 class="modal-title">Edit Event</h5>
-                    <a href="/index" class="btn-close btn-close-white"></a>
+                    <!--<a href="/index" class="btn-close btn-close-white"></a>-->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
 
                 <form th:action="@{/index/update/{id}(id=${event.id})}" method="post">
@@ -265,7 +277,10 @@
                     </div>
 
                     <div class="modal-footer border-secondary">
-                        <a href="/index" class="btn btn-outline-secondary">Cancel</a>
+                        <!--<a href="/index" class="btn btn-outline-secondary">Cancel</a>-->
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
                         <button type="submit" class="btn btn-outline-warning">
                             💾 Update Event
                         </button>
@@ -275,7 +290,6 @@
             </div>
         </div>
     </div>
-
 
 </body>
 </html>

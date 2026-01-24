@@ -17,6 +17,11 @@ body {
     border-color: #ccc;
 }
 
+.themed-modal {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
 /* Light Mode */
 body.light-mode {
     background-color: #f8f9fa;
@@ -40,6 +45,21 @@ body.light-mode .btn-dark {
     color: #fff;
     background-color: #212529;
     border-color: #000;
+}
+
+/* Inputs */
+body.light-mode .themed-modal .form-control,
+body.light-mode .themed-modal .form-select {
+    background-color: #ffffff;
+    color: #212529;
+    border-color: #ced4da;
+}
+
+.themed-modal .form-control,
+.themed-modal .form-select {
+    background-color: #2b3035;
+    color: #f8f9fa;
+    border-color: #495057;
 }
 
 
