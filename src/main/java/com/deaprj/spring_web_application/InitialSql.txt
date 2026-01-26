@@ -8,4 +8,5 @@ VALUES
 ('raveesha@gmail.com', 'Raveesha', 'Kavindi', 'raveesha@2002', 'USER'),
 ('kaveesha@gmail.com', 'Sachini', 'Kaveesha', 'kaveesha@2002', 'USER'),
 ('ayesh@gmail.com', 'Kavindu', 'Ayesh', 'ayesh@2003', 'USER'),
-('renuja@gmail.com', 'Renuja', 'Rodrigo', 'renuja@2002', 'USER');
+('renuja@gmail.com', 'Renuja', 'Rodrigo', 'renuja@2002', 'USER'),
+('kanishkaran@gamil.com','Kanishkaran','Nagulendran','kanishkaran@2001', 'USER');
