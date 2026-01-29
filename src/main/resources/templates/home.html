@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="d-flex justify-content-between align-items-center px-3 mt-3">
+        <!-- Left toggle button -->
+        <!-- ADMIN: enabled -->
+        <a th:href="@{/admin}"
+           class="btn btn-light toggle-btn-left"
+           id="leftThemeToggle1"
+           sec:authorize="hasRole('ADMIN')">
+            ADMIN
+        </a>
+
+        <!-- USER: disabled -->
+        <button class="btn btn-light toggle-btn-left"
+                id="leftThemeToggle2"
+                disabled
+                title="Only admins can access this page"
+                sec:authorize="hasRole('USER')">
+            ADMIN
+        </button>
+        <!--
+                <div th:if="${param.unauthorized}"
+                     class="alert alert-danger alert-dismissible fade show"
+                     role="alert">
+                    <strong>You are not Authorized!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>-->
+
+        <!-- Right toggle button -->
+        <button class="btn btn-light toggle-btn-right" id="themeToggle">
+            🌙 Dark Mode
+        </button>
+    </div>
+
+    <div class="container-fluid">
+
+        <h1 class="text-center mt-4 mb-2">EVENT MANAGEMENT SYSTEM</h1>
+
+        <p class="text-center" sec:authorize="isAuthenticated()">
+            <strong>
+                ☬
+                <span class="text-uppercase" sec:authentication="principal.firstName"></span>
+                <span class="text-uppercase" sec:authentication="principal.lastName"></span>
+                ☬
+            </strong>
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
