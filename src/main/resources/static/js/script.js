@@ -1,41 +1,31 @@
-const toggleBtn = document.getElementById('themeToggle');
-const lefttoggleBtn1 = document.getElementById('leftThemeToggle1');
-const lefttoggleBtn2 = document.getElementById('leftThemeToggle2');
-const body = document.body;
+document.addEventListener("DOMContentLoaded", function () {
 
-toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
+    const toggleBtn = document.getElementById('themeToggle');
+    const backBtn = document.getElementById('leftThemeToggle1');
+    const body = document.body;
 
-    if (body.classList.contains('light-mode')) {
-        toggleBtn.textContent = "☀️ Light Mode";
-        toggleBtn.classList.remove("btn-light");
-        toggleBtn.classList.add("btn-dark");
-    } else {
-        toggleBtn.textContent = "🌙 Dark Mode";
-        toggleBtn.classList.remove("btn-dark");
-        toggleBtn.classList.add("btn-light");
-    }
+    toggleBtn?.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
 
-    if (body.classList.contains('light-mode')) {
-        lefttoggleBtn1.textContent = "ADMIN";
-        lefttoggleBtn1.classList.remove("btn-light");
-        lefttoggleBtn1.classList.add("btn-dark");
-    } else {
-        lefttoggleBtn1.textContent = "ADMIN";
-        lefttoggleBtn1.classList.remove("btn-dark");
-        lefttoggleBtn1.classList.add("btn-light");
-    }
+        toggleBtn.textContent = body.classList.contains('light-mode')
+            ? "☀️ Light Mode"
+            : "🌙 Dark Mode";
 
-    if (body.classList.contains('light-mode')) {
-        lefttoggleBtn2.textContent = "ADMIN";
-        lefttoggleBtn2.classList.remove("btn-light");
-        lefttoggleBtn2.classList.add("btn-dark");
-    } else {
-        lefttoggleBtn2.textContent = "ADMIN";
-        lefttoggleBtn2.classList.remove("btn-dark");
-        lefttoggleBtn2.classList.add("btn-light");
-    }
+        toggleBtn.classList.toggle("btn-dark");
+        toggleBtn.classList.toggle("btn-light");
+
+        backBtn.classList.toggle("btn-dark");
+        backBtn.classList.toggle("btn-light");
+    });
+
+
+    // Back button
+    backBtn.addEventListener("click", function () {
+        window.history.back();
+    });
+
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     const editModal = document.getElementById('editEventModal');
 

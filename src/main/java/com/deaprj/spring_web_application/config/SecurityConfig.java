@@ -28,7 +28,7 @@ public class SecurityConfig {
 
                 // DEFAULT SPRING SECURITY LOGIN PAGE
                 .formLogin(form -> form
-                        .defaultSuccessUrl("/index", true)
+                        .defaultSuccessUrl("/home", true)
                         .permitAll()
                 )
 
