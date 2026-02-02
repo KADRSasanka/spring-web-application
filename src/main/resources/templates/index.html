@@ -117,8 +117,8 @@
                             Edit
                     </button>
 
-                    <a th:href="@{/events/delete/{id}(id=${event.id})}"
-                       class="btn btn-sm btn-danger"
+                    <a th:href="@{/index/delete/{id}(id=${event.id})}"
+                    class="btn btn-sm btn-danger"
                        onclick="return confirm('Are you sure?')">
                         Delete
                     </a>
@@ -225,7 +225,8 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
 
-                <form th:action="@{/index/update/{id}(id=${event.id})}" method="post">
+                <form id="editEventForm" method="post">
+                <!--<form th:action="@{/index/update/{id}(id=${event.id})}" method="post">-->
                     <div class="modal-body">
 
                         <input type="hidden" name="id" th:value="${event.id}"/>

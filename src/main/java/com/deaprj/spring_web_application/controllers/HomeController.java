@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
+    private final EventRepository eventRepository;
+
+    public HomeController(EventRepository eventRepository) {
+        this.eventRepository = eventRepository;
+    }
+
     @GetMapping("/home")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("events", eventRepository.findTop6ByOrderByCreatedAtDesc());
         return "home";
     }
 
-    /*
-    @GetMapping("/index")
-    public String index(Model model) {
-        model.addAttribute("events", eventRepository.findAll());
-        return "index";
-    }
-    */
 }
 

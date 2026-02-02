@@ -1,10 +1,10 @@
 INSERT INTO users (email, first_name, last_name, password, role)
 VALUES
-('ravindu@gmail.com', 'Ravindu', 'Gunarathne', 'ravindu@2002', 'USER'),
+('ravindu@gmail.com', 'Ravindu', 'Gunarathne', 'ravindu@2002', 'ADMIN'),
 ('geesith@gmail.com', 'Geesith', 'Kariyawasam', 'geesith@2003', 'USER'),
 ('tharindu@gmail.com', 'Tharindu', 'Madarasinghe', 'tharindu@2004', 'USER'),
 ('aseka@gmail.com', 'Aseka', 'Dissanayake', 'aseka@2004', 'USER'),
-('chamodi@gmail.com', 'Chamodi', 'Umesha', 'chamodi@2002', 'USER'),
+('chamodi@gmail.com', 'Chamodi', 'Umesha', 'chamodi@2002', 'ADMIN'),
 ('raveesha@gmail.com', 'Raveesha', 'Kavindi', 'raveesha@2002', 'USER'),
 ('kaveesha@gmail.com', 'Sachini', 'Kaveesha', 'kaveesha@2002', 'USER'),
 ('ayesh@gmail.com', 'Kavindu', 'Ayesh', 'ayesh@2003', 'USER'),

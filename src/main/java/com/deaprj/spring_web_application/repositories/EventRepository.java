@@ -25,4 +25,6 @@ public interface EventRepository extends JpaRepository<Events, Long> {
 //    // Search by event name (partial match)
 //    List<Events> findByEventNameContainingIgnoreCase(String keyword);
 
+    List<Events> findTop6ByOrderByCreatedAtDesc();
+
 }
