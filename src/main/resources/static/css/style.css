@@ -88,3 +88,138 @@ body.light-mode .themed-modal .form-select {
     backdrop-filter: blur(10px);
     background-color: rgba(0,0,0,1);
 }
+
+/* ===============================
+   Modern Event Card – Premium UI
+   =============================== */
+
+.card {
+    position: relative;
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    transition:
+            transform 0.35s cubic-bezier(.4,0,.2,1),
+            box-shadow 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+/* Soft gradient border glow */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(
+            135deg,
+            rgba(13,110,253,0.5),
+            rgba(0,255,255,0.2)
+    );
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Glow in */
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Title animation */
+.card-title {
+    font-weight: 600;
+    font-family: Bahnschrift, sans-serif;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .card-title {
+    color: #0d6efd;
+    transform: translateX(4px);
+}
+
+/* Status badge polish */
+.card .badge {
+    border-radius: 999px;
+    padding: 0.45em 0.75em;
+    font-size: 0.75rem;
+}
+
+/* Smooth appearance on page load */
+.card {
+    animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   Statistics Dashboard Cards
+   =============================== */
+
+.stat-card {
+    padding: 24px;
+    border-radius: 18px;
+    color: #fff;
+    /*background: rgba(255, 255, 255, 0.95);*/
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card-tot {
+    background: linear-gradient(rgb(255, 123, 144), rgb(255, 90, 117));
+}
+
+.stat-card-up {
+    background: linear-gradient(rgb(82, 222, 217), rgb(54, 174, 217));
+}
+.stat-card-on {
+    background: linear-gradient(rgb(61, 175, 241), rgb(39, 115, 221));
+}
+.stat-card-com {
+    background: linear-gradient(rgb(80, 227, 160), rgb(25 135 84));
+}
+
+.stat-card h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-card p {
+    margin: 0;
+    font-family: Bahnschrift, sans-serif;
+    font-size: 0.9rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* Accent colors
+.stat-card.upcoming h2 { color: #0d6efd; }
+.stat-card.ongoing h2 { color: #20c997; }
+.stat-card.completed h2 { color: #6f42c1; }*/

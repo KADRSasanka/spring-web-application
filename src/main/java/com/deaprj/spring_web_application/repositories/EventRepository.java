@@ -27,4 +27,6 @@ public interface EventRepository extends JpaRepository<Events, Long> {
 
     List<Events> findTop6ByOrderByCreatedAtDesc();
 
+    long countByStatus(EventStatus status);
+
 }

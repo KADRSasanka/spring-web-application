@@ -1,5 +1,6 @@
 package com.deaprj.spring_web_application.controllers;
 
+import com.deaprj.spring_web_application.models.EventStatus;
 import com.deaprj.spring_web_application.repositories.EventRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +18,22 @@ public class HomeController {
     @GetMapping("/home")
     public String home(Model model) {
         model.addAttribute("events", eventRepository.findTop6ByOrderByCreatedAtDesc());
+        // ✅ NEW: statistics (safe additions)
+        model.addAttribute("totalEvents",
+                eventRepository.count());
+
+        model.addAttribute("upcomingEvents",
+                eventRepository.countByStatus(EventStatus.UPCOMING));
+
+        model.addAttribute("ongoingEvents",
+                eventRepository.countByStatus(EventStatus.ONGOING));
+
+        model.addAttribute("completedEvents",
+                eventRepository.countByStatus(EventStatus.COMPLETED));
         return "home";
     }
+
+
 
 }
 

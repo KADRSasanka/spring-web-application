@@ -60,6 +60,48 @@
 
         <hr class="border-light border-3 my-4"> <!-- Blue, thicker line -->
 
+        <!-- STATISTICS DASHBOARD -->
+        <h2 class="my-2"> GLIMPSE OF EVENTS </h2>
+
+        <div class="container my-4">
+
+            <div class="row g-4 text-center">
+
+                <div class="col-md-3">
+                    <div class="stat-card stat-card-tot">
+                        <h2 th:text="${totalEvents}">0</h2>
+                        <p>Total Events</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="stat-card stat-card-up">
+                        <h2 th:text="${upcomingEvents}">0</h2>
+                        <p>Upcoming Events</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="stat-card stat-card-on">
+                        <h2 th:text="${ongoingEvents}">0</h2>
+                        <p>Ongoing Events</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="stat-card stat-card-com">
+                        <h2 th:text="${completedEvents}">0</h2>
+                        <p>Completed Events</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr class="border-light border-3 my-4"> <!-- Blue, thicker line -->
+
         <h2 class="my-2"> FEATURED EVENTS </h2>
 
         <div class="container mt-4">
