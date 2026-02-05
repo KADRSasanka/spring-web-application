@@ -147,8 +147,49 @@
 
         </div>
 
+        <hr class="border-light border-3 my-4"> <!-- Blue, thicker line -->
+
+        <!-- EVENT STATUS DOUGHNUT CHART -->
+        <div class="container my-5">
+
+            <div class="row gap-5 align-items-stretch">
+
+                <!-- LEFT : Doughnut Chart -->
+                <div class="col-12 col-md-5">
+                    <div class="chart-card align-items-center justify-content-center">
+
+                        <canvas id="eventStatusChart"
+                                th:attr="
+                               data-upcoming=${upcomingEvents},
+                               data-ongoing=${ongoingEvents},
+                               data-completed=${completedEvents},
+                               data-postponed=${postponedEvents},
+                               data-cancelled=${cancelledEvents}">
+                        </canvas>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT : Announcements -->
+                <div class="col-12 col-md-5">
+                    <div class="announcement-card h-100">
+                        <h4 class="announcement-title text-uppercase">Announcements</h4>
+                        <div class="announcement-item">
+                            <p class="announcement-main">
+                                This feature will be available soon...
+                            </p>
+                            <p class="announcement-sub">
+                                Digital Services Team
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script th:src="@{/js/home.js}"></script>
 </body>
 </html>

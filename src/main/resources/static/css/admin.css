@@ -11,6 +11,11 @@ body {
     border-color: #333;
 }
 
+.dashboard-card::before {
+    pointer-events: none;
+}
+
+
 /* Card headers */
 .card-header {
     background-color: #333;

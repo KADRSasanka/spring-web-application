@@ -30,6 +30,13 @@ public class HomeController {
 
         model.addAttribute("completedEvents",
                 eventRepository.countByStatus(EventStatus.COMPLETED));
+
+        model.addAttribute("postponedEvents",
+                eventRepository.countByStatus(EventStatus.POSTPONED));
+
+        model.addAttribute("cancelledEvents",
+                eventRepository.countByStatus(EventStatus.CANCELLED));
+
         return "home";
     }
 
