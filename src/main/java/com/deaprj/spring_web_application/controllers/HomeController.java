@@ -17,7 +17,11 @@ public class HomeController {
 
     @GetMapping("/home")
     public String home(Model model) {
+
         model.addAttribute("events", eventRepository.findTop6ByOrderByCreatedAtDesc());
+
+        model.addAttribute("events", eventRepository.findAll());
+
         // ✅ NEW: statistics (safe additions)
         model.addAttribute("totalEvents",
                 eventRepository.count());
