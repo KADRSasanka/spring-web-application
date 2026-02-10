@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
+.bungee {
+    font-family: "Bungee Inline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xxx-large;
+}
+
 /* Default Dark Mode */
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -296,4 +305,20 @@ body.light-mode .themed-modal .form-select {
 
 .table tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.03);
+}
+
+.pagination .page-link {
+    background-color: #111;
+    border-color: #333;
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.pagination .page-link:hover {
+    background-color: #1a1a1a;
+    color: #0d6efd;
 }

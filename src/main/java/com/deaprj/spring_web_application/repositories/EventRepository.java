@@ -2,11 +2,12 @@ package com.deaprj.spring_web_application.repositories;
 
 import com.deaprj.spring_web_application.models.EventStatus;
 import com.deaprj.spring_web_application.models.Events;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
-import java.util.Optional;
 @Repository
 public interface EventRepository extends JpaRepository<Events, Long> {
 
@@ -28,5 +29,10 @@ public interface EventRepository extends JpaRepository<Events, Long> {
     List<Events> findTop6ByOrderByCreatedAtDesc();
 
     long countByStatus(EventStatus status);
+
+    Page<Events> findAllByOrderByCreatedAtDesc(Pageable pageable);
+
+    List<Events> findByEventNameContainingIgnoreCaseOrEventCodeContainingIgnoreCaseOrVenueContainingIgnoreCase(
+            String eventName, String eventCode, String venue);
 
 }
