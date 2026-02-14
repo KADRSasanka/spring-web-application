@@ -125,9 +125,11 @@ This section explains how to connect IntelliJ IDEA with GitHub directly.
 	File → Settings → Version Control → GitHub
 6. Click +
 7. Log in using:
-	GitHub Account
-	OR Token
-8. Click Test to verify the connection.
+   
+	* GitHub Account
+	* OR Token
+
+9. Click Test to verify the connection.
 
 ✅ Step 3: Share Project to GitHub (First Time)
 
@@ -136,25 +138,30 @@ If the project is not yet on GitHub:
 1. Go to:
 	Git → GitHub → Share Project on GitHub
 2. Enter:
-	Repository Name
-	Description
-	Visibility (Public/Private)
+   
+	* Repository Name
+	* Description
+	* Visibility (Public/Private)
 3. Click Share
 
 ✅ Step 4: Push Code Manually (If Needed)
 
 If the repository already exists:
 
-1. Add Remote
+1. Add Remote:
+   
 	git remote add origin https://github.com/KADRSasanka/spring-web-application.git
 
-2. Add Files
+2. Add Files:
+   
 	git add .
 
 3. Commit
+   
 	git commit -m "Initial commit."
 
 4. Push
+   
 	git push -u origin main
 
 ## 🔄 Basic Git Workflow (Daily Use)
