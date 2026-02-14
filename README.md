@@ -1,15 +1,15 @@
-~ EVENT MANAGEMENT SYSTEM ~
+# ~ EVENT MANAGEMENT SYSTEM ~
 
-A modern Spring Boot + Thymeleaf + MySQL-based web application for managing events efficiently.
-This system allows users to create, update, delete, view, analyze, and export event data with a clean dashboard interface.
+_A modern Spring Boot + Thymeleaf + MySQL-based web application for managing events efficiently.
+This system allows users to create, update, delete, view, analyze, and export event data with a clean dashboard interface._
 
-🚀 Features
+## 🚀 Features
 
 -User authentication & role management
 -Dark mode toggle
 -REST API integration
 
-📌 Event Management
+## 📌 Event Management
 
 -Add new events
 -Edit existing events
@@ -18,54 +18,54 @@ This system allows users to create, update, delete, view, analyze, and export ev
 -Status-based badge system (Upcoming, Ongoing, Completed, Postponed, Cancelled, Draft)
 -Event filtering & search
 
-📊 Dashboard
+## 📊 Dashboard
 
 -Doughnut chart showing event status distribution
 -Announcement panel
 -Latest events section
 -Paginated events table (5 rows per page)
 
-📤 Export
+## 📤 Export
 
 -Export events to Excel (.xlsx)
 
-🎨 UI Features
+## 🎨 UI Features
 
--Modern UI design
--Hover animations
--Responsive layout (Bootstrap 5)
--Status-based color coding
+* Modern UI design
+* Hover animations
+* Responsive layout (Bootstrap 5)
+* Status-based color coding
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 
-Java
-Spring Boot
-Spring MVC
-Spring Data JPA
-Thymeleaf
-MySQL (XAMPP)
-Bootstrap 5
-Chart.js
-Apache POI (Excel Export)
+1. Java
+2. Spring Boot
+3. Spring MVC
+4. Spring Data JPA
+5. Thymeleaf
+6. MySQL (XAMPP)
+7. Bootstrap 5
+8. Chart.js
+9. Apache POI (Excel Export)
 
-⚙️ System Requirements
+## ⚙️ System Requirements
 
-Java 17+ (recommended)
-Maven
-XAMPP (MySQL)
-IDE (IntelliJ / VS Code)
+1. Java 17+ (recommended)
+2. Maven
+3. XAMPP (MySQL)
+4. IDE (IntelliJ / VS Code)
 
-🔗 Clone Project from GitHub (HTTPS) Using IntelliJ Terminal
+## 🔗 Clone Project from GitHub (HTTPS) Using IntelliJ Terminal
 
 This guide explains how to clone the project using HTTPS inside IntelliJ IDEA.
 
-✅ Prerequisites
+### ✅ Prerequisites
 
 Git installed → Check: git --version
 IntelliJ IDEA installed
 GitHub account
 
-🚀 Method 1: Clone Using IntelliJ Terminal (HTTPS)
+### 🚀 Method 1: Clone Using IntelliJ Terminal (HTTPS)
 
 1️⃣ Copy HTTPS URL from GitHub
 
@@ -92,7 +92,7 @@ git clone https://github.com/KADRSasanka/spring-web-application.git
 cd spring-web-application
 
 Or:
-File → Open → Select the cloned folder
+	File → Open → Select the cloned folder
 
 🔐 If GitHub Asks for Authentication
 
@@ -102,11 +102,11 @@ Use:
 Personal Access Token (PAT) instead of a password
 
 Create token:
-GitHub → Settings → Developer Settings → Personal Access Tokens → Generate New Token
+	GitHub → Settings → Developer Settings → Personal Access Tokens → Generate New Token
 
 Use that token as your password when prompted.
 
-🔄 Setup IntelliJ with GitHub (Version Control Integration)
+### 🔄 Setup IntelliJ with GitHub (Version Control Integration)
 
 This section explains how to connect IntelliJ IDEA with GitHub directly.
 
@@ -145,7 +145,7 @@ If the project is not yet on GitHub:
 If the repository already exists:
 
 Add Remote
-git remote add origin https://github.com/KADRSasanka/spring-web-application.git
+	git remote add origin https://github.com/KADRSasanka/spring-web-application.git
 
 Add Files
 	git add .
@@ -156,7 +156,7 @@ Commit
 Push
 	git push -u origin main
 
-🔄 Basic Git Workflow (Daily Use)
+## 🔄 Basic Git Workflow (Daily Use)
 
 After making changes:
 	git add .
@@ -166,7 +166,7 @@ After making changes:
 To get the latest changes:
 	git pull origin main
 
-🧠 Recommended IntelliJ Git Settings
+## 🧠 Recommended IntelliJ Git Settings
 
 Go to:
 	File → Settings → Version Control → Git
@@ -174,17 +174,18 @@ Ensure:
 	Git executable path is correct
 Test button shows success
 
-🗄️ Database Setup (MySQL via XAMPP)
+## 🗄️ Database Setup (MySQL via XAMPP)
+
 1️⃣ Start MySQL in XAMPP
 
 Open XAMPP → Start Apache and MySQL
 
 2️⃣ Create Database
 
-Go to http://localhost/phpmyadmin
+Go to http://localhost/phpmyadmin/
 
 Create a new database:
-CREATE DATABASE spring_web_app;
+	CREATE DATABASE spring_web_app;
 
 3️⃣ Configure application.properties
 
@@ -199,50 +200,56 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 
-▶️ How to Run the Project
+## ▶️ How to Run the Project
+
 Option 1 – Using an IDE
 
 Open project in IntelliJ / Eclipse
 Maven → Reload project
 Run:
-SpringWebApplication.java
+	SpringWebApplication.java
 Open browser:
-http://localhost:8080
+	http://localhost:8080
 Add Credentials:
-UserName - admin@email.com
-Password - admin123
+	UserName - admin@email.com
+	Password - admin123
 
-📊 Dashboard Features
+## 📊 Dashboard Features
 
 Doughnut chart displaying:
-Upcoming (Info)
-Ongoing (Primary)
-Completed (Success)
-Postponed (Warning)
-Cancelled (Danger)
-Announcement section beside chart
-Modern card-based layout
+* Upcoming (Info)
+* Ongoing (Primary)
+* Completed (Success)
+* Postponed (Warning)
+* Cancelled (Danger)
+* Announcement section beside chart
+* Modern card-based layout
 
-📋 Event Table Features
+## Admin Features
+
+Only ADMIN role users can have access to ADMIN page.
+ADMIN button is disabled to USER role users 
+
+## 📋 Event Table Features
 
 Displays:
-Event Code
-Event Name
-Venue
-Project Chair
-Status
-Status badges with Bootstrap colors
-Pagination (5 rows per page)
-Excel export support
+* Event Code
+* Event Name
+* Venue
+* Project Chair
+* Status
+* Status badges with Bootstrap colors
+* Pagination (5 rows per page)
+* Excel export support
 
-📤 Excel Export
+## 📤 Excel Export
 
 Events can be exported as:
 .xlsx file
 
 Generated using Apache POI.
 
-📌 Project Type
+## 📌 Project Type
 
 Academic / Portfolio Project
 Built for learning and demonstration of:
@@ -252,7 +259,7 @@ Built for learning and demonstration of:
 -Database integration
 -Excel export functionality
 
-🧠 Learning Outcomes
+## 🧠 Learning Outcomes
 
 -MVC architecture implementation
 -Thymeleaf dynamic rendering
