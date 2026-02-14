@@ -2,9 +2,15 @@ package com.deaprj.spring_web_application.controllers;
 
 import com.deaprj.spring_web_application.models.Events;
 import com.deaprj.spring_web_application.repositories.EventRepository;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 
 import java.util.List;
 
@@ -80,4 +86,77 @@ public class EventController {
         eventRepository.deleteById(id);
         return "redirect:/index";
     }
+
+    // 🔹 Export events as Excel
+    @GetMapping("/export/excel")
+    public void exportEventsToExcel(HttpServletResponse response) throws IOException {
+
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        response.setHeader("Content-Disposition", "attachment; filename=events_list.xlsx");
+
+        List<Events> events = eventRepository.findAll();
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Events");
+
+        // 🔹 Header Style (Bold)
+        CellStyle headerStyle = workbook.createCellStyle();
+        Font headerFont = workbook.createFont();
+        headerFont.setBold(true);
+        headerStyle.setFont(headerFont);
+
+        // 🔹 Create Header Row
+        Row headerRow = sheet.createRow(0);
+        String[] columns = {
+                "Event Code",
+                "Event Name",
+                "Venue",
+                "Start Date",
+                "End Date",
+                "Status"
+        };
+
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerStyle);
+        }
+
+        // 🔹 Fill Data Rows
+        int rowNum = 1;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        for (Events event : events) {
+
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0).setCellValue(event.getEventCode());
+            row.createCell(1).setCellValue(event.getEventName());
+            row.createCell(2).setCellValue(event.getVenue());
+
+            row.createCell(3).setCellValue(
+                    event.getStartDate() != null ?
+                            event.getStartDate().format(formatter) : "-"
+            );
+
+            row.createCell(4).setCellValue(
+                    event.getEndDate() != null ?
+                            event.getEndDate().format(formatter) : "-"
+            );
+
+            row.createCell(5).setCellValue(
+                    event.getStatus() != null ?
+                            event.getStatus().name() : "-"
+            );
+        }
+
+        // 🔹 Auto-size columns
+        for (int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        workbook.write(response.getOutputStream());
+        workbook.close();
+    }
+
 }

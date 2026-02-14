@@ -62,9 +62,11 @@
             <a class="btn btn-outline-primary col-6 mx-auto mb-3" href="/index/add" role="button" data-bs-toggle="modal"
                data-bs-target="#addEventModal">ADD AN EVENT</a>
         </div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search events by name, code, or venue" aria-label="Search events" id="eventSearch">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <input type="text" class="form-control me-2" placeholder="Search events by name, code, or venue" id="eventSearch">
+            <a th:href="@{/index/export/excel}" class="btn btn-outline-primary col-2 mx-auto">📊 Export as Excel</a>
         </div>
+
 
         <table class="table table-striped table-hover">
             <thead>

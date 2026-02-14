@@ -10,3 +10,20 @@ VALUES
 ('ayesh@gmail.com', 'Kavindu', 'Ayesh', 'ayesh@2003', 'USER'),
 ('renuja@gmail.com', 'Renuja', 'Rodrigo', 'renuja@2002', 'USER'),
 ('kanishkaran@gamil.com','Kanishkaran','Nagulendran','kanishkaran@2001', 'USER');
+
+INSERT INTO events (event_code, event_name, venue, project_chair_id, start_date, end_date, status) VALUES
+('EVT-2026-001', 'Career Guidance & CV Writing Workshop', 'NSBM Auditorium', '2', '2026-01-26', '2026-01-27', 'COMPLETED'),
+('EVT-2026-002', 'Charity Food Fiesta', 'Viharamahadevi Open Grounds', '5', '2026-02-06', '2026-02-08', 'UPCOMING'),
+('EVT-2026-003', 'Hackathon by CodeX', 'NSBM Green University, FOC 101', '3', '2026-02-02', '2026-02-03', 'ONGOING'),
+('EVT-2026-005', 'Green Fiesta', 'NSBM Ground Phase01', '4', '2026-02-13', '2026-02-13', 'UPCOMING'),
+('EVT-2026-006', 'Nadya', 'NSBM Auditorium', '5', '2026-02-14', '2026-02-14', 'POSTPONED'),
+('EVT-2026-007', 'Club Orientation', 'NSBM Green University', '3', '2026-01-10', '2026-01-10', 'COMPLETED'),
+('EVT-2026-008', 'Blood Donation Camp', 'Colombo General Hospital', '5', '2026-01-18', '2026-01-18', 'COMPLETED'),
+('EVT-2026-009', 'Career Guidance Session', 'Online (Zoom)', '2', '2026-01-22', '2026-01-22', 'COMPLETED'),
+('EVT-2026-010', 'SmashFit Badminton Practice', 'Police Park Indoor Stadium', '7', '2026-01-25', '2026-01-25', 'COMPLETED'),
+('EVT-2026-011', 'Environmental Clean-Up', 'Galle Face Green', '1', '2026-02-02', '2026-02-02', 'COMPLETED'),
+('EVT-2026-012', 'PR & Branding Workshop', 'Dakshith’s Residence', '4', '2026-02-06', '2026-02-06', 'COMPLETED'),
+('EVT-2026-013', 'Mental Health Awareness Talk', 'Auditorium – City Campus', '6', '2026-02-12', '2026-02-12', 'DRAFT'),
+('EVT-2026-014', 'New Member Fellowship', 'Cafe Mocha, Colombo', '9', '2026-02-16', '2026-02-16', 'DRAFT'),
+('EVT-2026-015', 'Professional Development Series', 'Online (MS Teams)', '8', '2026-02-20', '2026-02-22', 'ONGOING'),
+('EVT-2026-016', 'Board Planning Session', 'Club Office', '11', '2026-02-25', '2026-02-25', 'COMPLETED');
