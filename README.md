@@ -268,3 +268,8 @@ Built for learning and demonstration of:
 * Chart.js integration with backend data
 * Pagination handling
 * File export handling
+
+## Sample Screenshots
+
+Google Drive Link: 
+https://drive.google.com/drive/folders/1DlXR2tgHoAncm2-QBrak-1w2EYqyytyV?usp=sharing
